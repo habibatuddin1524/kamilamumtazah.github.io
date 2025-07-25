@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kamilamumtazah Business</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #ffcce6;
+      text-align: center;
+      color: #5c005c;
+      margin: 0;
+      padding: 0;
+    }
+    .logo {
+      margin-top: 30px;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      margin: 10px;
+    }
+    .counter-box {
+      background: #fff0f5;
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 10px;
+      margin: 20px auto;
+    }
+    .counter-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #d9006c;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
+      background: #ff66a3;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #e60073;
+    }
+    .section {
+      margin: 40px 20px;
+    }
+    .info-button {
+      background: #ff99cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .info-button:hover {
+      background: #cc007a;
+    }
+    .info-content {
+      background: #fff;
+      padding: 15px;
+      border-radius: 15px;
+      margin-top: 10px;
+      display: none;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="logo.png" alt="Logo" width="100">
+  </div>
+
+  <div class="hero">
+    <h1>Welcome To<br>Kamilamumtazah Business</h1>
+    <div class="counter-box">
+      <div><strong>TOTAL MEMBER AKTIF</strong></div>
+      <div class="counter-number" id="memberCount">00.000</div>
+    </div>
+
+    <a class="cta-button" href="https://wa.me/6281234567890" target="_blank">
+      Gabung Sekarang 💬
+    </a>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleInfo('database')" class="info-button">📁 DATABASE</button>
+    <div id="database" class="info-content">
+      <p><strong>DATABASE</strong> adalah bisnis yang berjalan di bidang online yang di dalamnya terdapat kontak supplier tangan pertama mulai dari fashion, alat rumah tangga, kpop-stuf, otomotif, dll dengan harga yang sangat murah. Sehingga kamu bisa menjualnya kembali dengan keuntungan yang lebih besar.</p>
+      <p>Jadii database itu isinya semua fasilitas bisnis termasuk tips trik sukses berbisnis dan semua link kontak supplier (toko) terlengkap langsung dari pabrik tersedia di sana ya kak. Intinya semua yang dibutuhkan untuk bisnis ada di sana. Untuk detail akan dijelaskan setelah join 🙏</p>
+    </div>
+
+    <button onclick="toggleInfo('olshop')" class="info-button">🛍️ ONLINE SHOP</button>
+    <div id="olshop" class="info-content">
+      <p><strong>ONLINE SHOP</strong> sendiri terbagi menjadi 2, yaitu <strong>dropshipper</strong> dan <strong>reseller</strong>.</p>
+      <p><strong>Dropshipper</strong> adalah menjual barang milik supplier ke konsumen tanpa menyetok barang. Sedangkan <strong>reseller</strong> adalah menjual barang dengan cara menyetok barang tersebut. Semua suppliernya sudah disediakan di bisnis ini dan sangat lengkap.</p>
+      <p>Contoh: Harga baju di supplier Rp10.000, sedangkan di pasaran Rp80.000. Kamu bisa jual Rp50.000, untung Rp30.000. Kalau sehari jual 20 pcs:</p>
+      <p>Rp30.000 x 20 = Rp600.000<br>Rp600.000 x 30 hari = Rp18.000.000</p>
+      <p>Dan itu baru dari olshop! Belum termasuk database & kuota 😭</p>
+      <p>💖 Produk yang dijual: sepatu, tas, baju, alat rumah tangga, skincare, make up, alat motor, dll. Lengkap, harga langsung pabrik, +100 kontak supplier!</p>
+      <p>📌 Dilengkapi TIPS TRIK SUKSES: cara promosi, caption jualan, strategi jualan, semuanya udah siap — kamu tinggal jalanin aja pakai HP! 🥰</p>
+      <p>Setelah join langsung masuk grup bimbingan dan dibimbing sampai sukses ya kak 💖</p>
+    </div>
+  </div>
+
+  <script>
+    // Animasi angka naik
+    function animateCounter(id, target, duration) {
+      const el = document.getElementById(id);
+      let start = 0;
+      const step = Math.ceil(target / (duration / 30));
+      const interval = setInterval(() => {
+        start += step;
+        if (start >= target) {
+          start = target;
+          clearInterval(interval);
+        }
+        el.textContent = start.toLocaleString('id-ID').padStart(6, '0');
+      }, 30);
+    }
+
+    // Toggle konten tombol
+    function toggleInfo(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+
+    // Jalankan animasi saat load
+    window.onload = function () {
+      animateCounter("memberCount", 24055, 2000);
+    };
+  </script>
+</body>
+</html>
